@@ -1,0 +1,114 @@
+<%- include("../partials/head") %>
+  <%- include("../partials/header") %>
+
+    <main class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <h1 class="ff-serif font-weight-bold text-center">
+              <%= post.title %>
+            </h1>
+            <h6 class="text-secondary text-center my-3">
+              <i class="far fa-user-circle mr-2"></i>
+              <%= post.author %> |
+                <%= post.postedOn %>
+            </h6>
+            <hr />
+            <p class="text-center">
+              <img class="mw-100 rounded-lg shadow" src="<%= post.img_url %>"
+                alt="<%= post.title %>" />
+            </p>
+            <br />
+            <p>
+              <%- post.postBody %>
+            </p>
+            <br>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <a href="/blog/<%= post._id %>/edit"
+                class="btn btn-outline-info btn-sm">
+                Edit this Post</a>
+              <button onclick="toggleModal()"
+                class="btn btn-outline-danger btn-sm">Delete this Post</button>
+            </div>
+            <hr>
+           <div class="comments-wrapper pt-4">
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3">
+    <h4 class="m-0"><b>Comments</b></h4>
+    <button class="btn btn-light btn-sm" data-toggle="collapse" data-target="#comments-form">
+      Add Comment
+    </button>
+  </div>
+  <div class="py-3">
+    <div id="comments-form" class="collapse">
+      <form class="needs-validation mb-4 p-4 bg-white rounded-lg shadow" action="/blog/<%= post._id %>/comment" method="post" novalidate>
+        <div class="form-group">
+          <label for="user" class="small text-secondary">Username</label>
+          <input type="text" name="user" id="user" class="form-control form-control-sm" required>
+        </div>
+        <div class="form-group">
+          <label for="comment" class="small text-secondary">Comment</label>
+          <textarea name="comment" id="comment" class="form-control form-control-sm" rows="5" required></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit">Submit<i class="fas fa-paper-plane ml-2"></i></button>
+      </form>
+    </div>
+    <% for (let i = post.comments.length - 1; i >= 0; i--) { %>
+      <div class="card rounded-lg shadow-sm my-3">
+        <div class="card-header small font-weight-bold text-secondary">@<span class="text-capitalize"><%= post.comments[i].user %></span></div>
+        <div class="card-body"><%= post.comments[i].comment %></div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+         
+          </div>
+        
+        </div>
+       
+      </div>
+  
+    </main>
+
+
+    <div class="modal-wrapper d-none">
+      <div class="modal-box">
+        <div class="modal-box-icon">
+          <p
+            class="m-0 d-inline-block text-center text-danger bg-white rounded-pill">
+            <i class="fas fa-exclamation-triangle"></i>
+          </p>
+        </div>
+        <div class="modal-box-top text-center">
+          <h3 class="text-danger">Are You Sure?</h3>
+          <p class="text-secondary m-0">You want to delete this post - <b>"<%=
+                post.title %>"</b></p>
+        </div>
+        <div class="modal-box-bottom">
+          <div><button onclick="toggleModal()"
+              class="btn btn-secondary btn-block btn-lg rounded-0">Cancel</button>
+          </div>
+          <div>
+            <form action="/blog/<%= post._id %>?_method=DELETE" method="post">
+              <button type="submit"
+                class="btn btn-danger btn-block btn-lg rounded-0">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      const modal = document.querySelector(".modal-wrapper");
+
+      function toggleModal() {
+        modal.classList.toggle("d-none");
+      }
+    </script>
+
+
+    <script src="/js/form-validation.js"></script>
+
+    <%- include("../partials/footer") %>

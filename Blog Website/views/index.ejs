@@ -1,0 +1,66 @@
+<%- include("partials/head") %>
+
+<body>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-container {
+      background: linear-gradient(to right, #123456, #654321); 
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #f8f9fa;
+      border: 2px solid #007bff;
+      color: #007bff;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.2em;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background-color: #007bff;
+      color: #f8f9fa;
+    }
+
+    .button a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .button a:hover {
+      color: inherit;
+    }
+  </style>
+
+  <div class="hero-container">
+    <h1 class="h1">Blog Website</h1>
+    <button class="button">
+      <a href="/blog">Open Blog</a>
+    </button>
+  </div>
+
+  <%- include("partials/footer") %>
+</body>

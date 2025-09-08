@@ -1,0 +1,43 @@
+<div class="my-navbar">
+  <div class="container">
+    <nav class="navbar">
+      <a href="/" class="nav-link"></i> Home</a>
+      <a href="/blog" class="nav-link<% if(titleTag == "All Blog Posts"){ %> active<% } %>"> All Blogs</a>
+      <a href="/blog/new" class="nav-link<% if(titleTag == "Add New Post"){ %> active<% } %>"></i> Add Post</a>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .my-navbar {
+    background-color: #343a40; /* Darker background for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    padding: 15px 0; /* Increased padding for better spacing */
+  }
+
+  .navbar {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items */
+    align-items: center; /* Vertically center items */
+  }
+
+  .nav-link {
+    color: white; /* Link color */
+    padding: 12px 20px; /* Spacing around links */
+    margin: 0 10px; /* Margin between links */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    border-radius: 25px; /* More rounded corners for a pill shape */
+    font-weight: 500; /* Medium font weight */
+  }
+
+  .nav-link:hover {
+    background-color: #6c757d; /* Hover effect */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+
+  .nav-link.active {
+    background-color: #007bff; /* Active link background */
+    color: white; /* Active link text color */
+    font-weight: bold; /* Bold text for active state */
+  }
+</style>

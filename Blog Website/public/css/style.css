@@ -1,0 +1,142 @@
+/* Utilties */
+.border-lighter {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ff-serif {
+  font-family: serif;
+}
+
+/* Utilities - Supernote */
+pre {
+  padding: 1.2rem;
+  color: #dcfaff;
+  background-color: #2d2d2d;
+  border-top: 5px solid var(--info);
+  border-radius: 5px;
+}
+
+.blockquote {
+  background: rgba(23, 162, 184, 0.05);
+  padding: 1.2rem;
+  border-left: 5px solid var(--info);
+}
+
+.blockquote p {
+  margin: 0;
+}
+
+.postImg {
+  min-width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Social Icons */
+.social-icons {
+  background-color: #123035;
+}
+
+.social-icons .col-lg-6 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 992px) {
+  .social-icons .col-lg-6 {
+    border-bottom: none;
+  }
+}
+
+/* Header  */
+.logo {
+  background: linear-gradient(0deg, #085865, #063f47);
+  color: #a8f3ff;
+}
+
+/* Navbar  */
+.my-navbar {
+  background-color: #2f4040;
+}
+
+.my-navbar .nav .nav-link {
+  padding: 10px 14px 6px 14px;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 5px solid transparent;
+  transition: 0.25s;
+}
+
+.my-navbar .nav .nav-link:hover,
+.my-navbar .nav .nav-link.active {
+  color: rgba(255, 255, 255, 1);
+  background-color: #222;
+  border-bottom-color: var(--info);
+}
+
+/* Hero */
+.hero {
+  background-color: #333;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)),
+    url("https://i.pinimg.com/originals/40/b1/69/40b169113fbdb8eee28dfb8409ee028c.jpg") repeat center;
+}
+
+/* Blogs  */
+.card-img {
+  height: 200px;
+}
+
+.card-img img {
+  object-fit: cover;
+  object-position: center;
+  transition: 0.25s;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+/* Modal  */
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  width: 400px;
+  position: relative;
+}
+
+.modal-box-icon {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-box-icon p {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #a57272;
+  padding-top: 6px;
+  font-size: 2.9rem;
+}
+
+.modal-box-top {
+  background-color: #fff;
+  padding: 80px 50px 50px;
+}
+
+.modal-box-bottom {
+  display: flex;
+}
+
+.modal-box-bottom>div {
+  flex: 1;
+}
